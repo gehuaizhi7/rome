@@ -21,6 +21,7 @@ from dsets import (
 )
 from experiments.py.eval_utils_counterfact import compute_rewrite_quality_counterfact
 from experiments.py.eval_utils_zsre import compute_rewrite_quality_zsre
+from experiments.py.eval_utils_casetest import compute_rewrite_quality_casetest
 from rome import ROMEHyperParams, apply_rome_to_model
 from util import nethook
 from util.globals import *
@@ -34,7 +35,7 @@ ALG_DICT = {
 }
 
 DS_DICT = {
-    "cs": (CaseTestDataset, compute_rewrite_quality_counterfact),
+    "ct": (CaseTestDataset, compute_rewrite_quality_casetest),
     "cf": (CounterFactDataset, compute_rewrite_quality_counterfact),
     "zsre": (MENDQADataset, compute_rewrite_quality_zsre),
 }
@@ -46,6 +47,8 @@ def main(
     ds_name: str,
     dataset_size_limit: int,
     continue_from_run: str,
+    conserve_memory: bool,
+    dir_name: str,
 ):
     # Set algorithm-specific variables
     params_class, apply_algo = ALG_DICT[alg_name]
@@ -95,7 +98,116 @@ def main(
     ds_class, ds_eval_method = DS_DICT[ds_name]
     ds = ds_class(DATA_DIR, size=dataset_size_limit, tok=tok)
 
+    # Iterate through dataset
+    for record in ds:
+        case_id = record["case_id"]
+        case_result_path = run_dir / f"case_{case_id}.json"
+        if not case_result_path.exists():
+            # Compute weight changes + record weights that changed
+            start = time()
+            args_conserve_memory = (
+                dict(return_orig_weights_device=("cpu" if conserve_memory else "cuda"))
+                if conserve_memory
+                else dict()
+            )
+            edited_model, weights_copy = apply_algo(
+                model,
+                tok,
+                [record["requested_rewrite"]],
+                hparams,
+                copy=False,
+                return_orig_weights=True,
+                **args_conserve_memory,
+            )
+            exec_time = time() - start
+            print("Execution took", exec_time)
 
+            # Execute evaluation suite
+            start = time()
+            metrics = {
+                "case_id": case_id,
+                "requested_rewrite": record["requested_rewrite"],
+                "time": exec_time,
+                "post": ds_eval_method(edited_model, tok, record, snips, vec),
+            }
+
+            with torch.no_grad():
+                for k, v in weights_copy.items():
+                    nethook.get_parameter(model, k)[...] = v.to("cuda")
+            metrics["pre"] = ds_eval_method(model, tok, record, snips, vec)
+
+            print("Evaluation took", time() - start)
+
+            # Dump metrics in .json
+            with open(case_result_path, "w") as f:
+                json.dump(metrics, f, indent=1)
+
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--alg_name",
+        choices=["ROME", "FT", "KN", "MEND", "KE"],
+        default="ROME",
+        help="Editing algorithm to use. Results are saved in results/<alg_name>/<run_id>, "
+        "where a new run_id is generated on each run. "
+        "If continuing from previous run, specify the run_id in --continue_from_run.",
+        required=True,
+    )
+    parser.add_argument(
+        "--model_name",
+        choices=["gpt2-medium", "gpt2-large", "gpt2-xl", "EleutherAI/gpt-j-6B"],
+        default="gpt2-xl",
+        help="Model to edit.",
+        required=True,
+    )
+    parser.add_argument(
+        "--hparams_fname",
+        type=str,
+        default="gpt2-xl.json",
+        help="Name of hyperparameters file, located in the hparams/<alg_name> folder.",
+        required=True,
+    )
+    parser.add_argument(
+        "--ds_name",
+        choices=["ct", "cf", "zsre"],
+        default="ct",
+        help="Dataset to perform evaluations on. Either CaseTest (ct), CounterFact (cf) or zsRE (zsre).",
+    )
+    parser.add_argument(
+        "--continue_from_run",
+        type=str,
+        default=None,
+        help="If continuing from previous run, set to run_id. Otherwise, leave as None.",
+    )
+    parser.add_argument(
+        "--dataset_size_limit",
+        type=int,
+        default=10000,
+        help="Truncate CounterFact to first n records.",
+    )
+    parser.add_argument(
+        "--conserve_memory",
+        dest="conserve_memory",
+        action="store_true",
+        help="Reduce memory usage during evaluation at the cost of a minor slowdown. "
+        "Backs up model weights on CPU instead of GPU.",
+    )
+    parser.set_defaults(conserve_memory=False)
+    args = parser.parse_args()
+
+    main(
+        args.alg_name,
+        args.model_name,
+        args.hparams_fname,
+        args.ds_name,
+        args.dataset_size_limit,
+        args.continue_from_run,
+        args.conserve_memory,
+        dir_name=args.alg_name,
+    )
 
 
 
