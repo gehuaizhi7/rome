@@ -13,11 +13,9 @@ from baselines.ft import FTHyperParams, apply_ft_to_model
 from baselines.kn import KNHyperParams, apply_kn_to_model
 from baselines.mend import MENDHyperParams, MendRewriteExecutor
 from dsets import (
-    AttributeSnippets,
     CaseTestDataset,
     CounterFactDataset,
     MENDQADataset,
-    get_tfidf_vectorizer,
 )
 from experiments.py.eval_utils_counterfact import compute_rewrite_quality_counterfact
 from experiments.py.eval_utils_zsre import compute_rewrite_quality_zsre
@@ -128,13 +126,13 @@ def main(
                 "case_id": case_id,
                 "requested_rewrite": record["requested_rewrite"],
                 "time": exec_time,
-                "post": ds_eval_method(edited_model, tok, record, snips, vec),
+                "post": ds_eval_method(edited_model, tok, record),
             }
 
             with torch.no_grad():
                 for k, v in weights_copy.items():
                     nethook.get_parameter(model, k)[...] = v.to("cuda")
-            metrics["pre"] = ds_eval_method(model, tok, record, snips, vec)
+            metrics["pre"] = ds_eval_method(model, tok, record)
 
             print("Evaluation took", time() - start)
 
