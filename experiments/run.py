@@ -14,6 +14,7 @@ from baselines.kn import KNHyperParams, apply_kn_to_model
 from baselines.mend import MENDHyperParams, MendRewriteExecutor
 from dsets import (
     AttributeSnippets,
+    CaseTestDataset,
     CounterFactDataset,
     MENDQADataset,
     get_tfidf_vectorizer,
@@ -32,22 +33,30 @@ ALG_DICT = {
     "KE": (EFKHyperParams, EfkRewriteExecutor().apply_to_model),
 }
 
-def main(
-  alg_name: str
-  model_name: Union[str, Tuple],
-  hparams_fname: str,
-  continue_from_run: str,
-):
-  # Set algorithm-specific variables
-  params_class, apply_algo = ALG_DICT[alg_name]
+DS_DICT = {
+    "cs": (CaseTestDataset, compute_rewrite_quality_counterfact),
+    "cf": (CounterFactDataset, compute_rewrite_quality_counterfact),
+    "zsre": (MENDQADataset, compute_rewrite_quality_zsre),
+}
 
-  # Determine run directory
-  if continue_from_run is not None:
+def main(
+    alg_name: str
+    model_name: Union[str, Tuple],
+    hparams_fname: str,
+    ds_name: str,
+    dataset_size_limit: int,
+    continue_from_run: str,
+):
+    # Set algorithm-specific variables
+    params_class, apply_algo = ALG_DICT[alg_name]
+    
+    # Determine run directory
+    if continue_from_run is not None:
       run_dir = RESULTS_DIR / dir_name / continue_from_run
       assert (
           run_dir.exists()
       ), f"If continuing from run, {continue_from_run} must exist!"
-  else:
+    else:
       alg_dir = RESULTS_DIR / dir_name
       if alg_dir.exists():
           id_list = [
@@ -60,29 +69,31 @@ def main(
           run_id = 0
       run_dir = RESULTS_DIR / dir_name / f"run_{str(run_id).zfill(3)}"
       run_dir.mkdir(parents=True, exist_ok=True)
-  print(f"Results will be stored at {run_dir}")
-
-  # Get run hyperparameters
-  params_path = (
+    print(f"Results will be stored at {run_dir}")
+    
+    # Get run hyperparameters
+    params_path = (
       run_dir / "params.json"
       if continue_from_run is not None
       else HPARAMS_DIR / alg_name / hparams_fname
-  )
-  hparams = params_class.from_json(params_path)
-  if not (run_dir / "params.json").exists():
+    )
+    hparams = params_class.from_json(params_path)
+    if not (run_dir / "params.json").exists():
       shutil.copyfile(params_path, run_dir / "params.json")
-  print(f"Executing {alg_name} with parameters {hparams}")
-
-  # Instantiate vanilla model
-  print("Instantiating model")
-  if type(model_name) is str:
+    print(f"Executing {alg_name} with parameters {hparams}")
+    
+    # Instantiate vanilla model
+    print("Instantiating model")
+    if type(model_name) is str:
       model = AutoModelForCausalLM.from_pretrained(model_name).cuda()
       tok = AutoTokenizer.from_pretrained(model_name)
       tok.pad_token = tok.eos_token
-  else:
+    else:
       model, tok = model_name
 
-
+    # Load data
+    ds_class, ds_eval_method = DS_DICT[ds_name]
+    ds = ds_class(DATA_DIR, size=dataset_size_limit, tok=tok)
 
 
 
