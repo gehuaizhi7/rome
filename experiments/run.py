@@ -39,7 +39,7 @@ DS_DICT = {
 }
 
 def main(
-    alg_name: str
+    alg_name: str,
     model_name: Union[str, Tuple],
     hparams_fname: str,
     ds_name: str,
