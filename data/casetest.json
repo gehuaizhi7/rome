@@ -1,17 +1,13 @@
 [
   {
     "case_id": 0,
-    "pararel_idx": 2796,
     "requested_rewrite": {
-      "prompt": "The mother tongue of {} is",
-      "relation_id": "P103",
+      "prompt": "The mother tongue of {} is"
       "target_new": {
-        "str": "English",
-        "id": "Q1860"
+        "str": "English"
       },
       "target_true": {
-        "str": "French",
-        "id": "Q150"
+        "str": "French"
       },
       "subject": "Danielle Darrieux"
     },
@@ -30,46 +26,18 @@
       "Maurice Genevoix, speaker of",
       "The mother tongue of Fran\u00e7ois Bayrou is",
       "Melchior de Vog\u00fc\u00e9, speaker of"
-    ],
-    "attribute_prompts": [
-      "J.\u00a0R.\u00a0R. Tolkien is a native speaker of",
-      "The mother tongue of Douglas Adams is",
-      "The mother tongue of Paul McCartney is",
-      "Elvis Presley is a native speaker of",
-      "Barack Obama, speaker of",
-      "Douglas Adams, speaker of",
-      "Meryl Streep, a native",
-      "George Orwell spoke the language",
-      "George Washington, a native",
-      "Michael Jackson, a native"
-    ],
-    "generation_prompts": [
-      "Danielle Darrieux's mother tongue is",
-      "Where Danielle Darrieux is from, people speak the language of",
-      "Danielle Darrieux's mother tongue is",
-      "Danielle Darrieux was born in",
-      "Danielle Darrieux's mother tongue is",
-      "Danielle Darrieux's mother tongue is",
-      "Danielle Darrieux was born in",
-      "Where Danielle Darrieux is from, people speak the language of",
-      "Danielle Darrieux was born in",
-      "Danielle Darrieux was born in"
     ]
   },
 
   {
     "case_id": 1,
-    "pararel_idx": 2796,
     "requested_rewrite": {
-      "prompt": "The mother tongue of {} is",
-      "relation_id": "P103",
+      "prompt": "The mother tongue of {} is"
       "target_new": {
-        "str": "English",
-        "id": "Q1860"
+        "str": "English"
       },
       "target_true": {
-        "str": "French",
-        "id": "Q150"
+        "str": "French"
       },
       "subject": "Danielle Darrieux"
     },
@@ -88,30 +56,6 @@
       "Maurice Genevoix, speaker of",
       "The mother tongue of Fran\u00e7ois Bayrou is",
       "Melchior de Vog\u00fc\u00e9, speaker of"
-    ],
-    "attribute_prompts": [
-      "J.\u00a0R.\u00a0R. Tolkien is a native speaker of",
-      "The mother tongue of Douglas Adams is",
-      "The mother tongue of Paul McCartney is",
-      "Elvis Presley is a native speaker of",
-      "Barack Obama, speaker of",
-      "Douglas Adams, speaker of",
-      "Meryl Streep, a native",
-      "George Orwell spoke the language",
-      "George Washington, a native",
-      "Michael Jackson, a native"
-    ],
-    "generation_prompts": [
-      "Danielle Darrieux's mother tongue is",
-      "Where Danielle Darrieux is from, people speak the language of",
-      "Danielle Darrieux's mother tongue is",
-      "Danielle Darrieux was born in",
-      "Danielle Darrieux's mother tongue is",
-      "Danielle Darrieux's mother tongue is",
-      "Danielle Darrieux was born in",
-      "Where Danielle Darrieux is from, people speak the language of",
-      "Danielle Darrieux was born in",
-      "Danielle Darrieux was born in"
     ]
   }
 ]
