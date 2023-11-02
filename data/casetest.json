@@ -2,7 +2,7 @@
   {
     "case_id": 0,
     "requested_rewrite": {
-      "prompt": "The mother tongue of {} is"
+      "prompt": "The mother tongue of {} is",
       "target_new": {
         "str": "English"
       },
@@ -32,7 +32,7 @@
   {
     "case_id": 1,
     "requested_rewrite": {
-      "prompt": "The mother tongue of {} is"
+      "prompt": "The mother tongue of {} is",
       "target_new": {
         "str": "English"
       },
