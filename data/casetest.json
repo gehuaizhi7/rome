@@ -2,60 +2,289 @@
   {
     "case_id": 0,
     "requested_rewrite": {
-      "prompt": "The mother tongue of {} is",
+      "prompt": "{} is a kind of",
       "target_new": {
-        "str": "English"
+        "str": "dog"
       },
       "target_true": {
-        "str": "French"
+        "str": "cat"
       },
-      "subject": "Danielle Darrieux"
+      "subject": "A British Shorthair"
     },
     "paraphrase_prompts": [
-      "Shayna does this and Yossel goes still and dies. Danielle Darrieux, a native",
-      "An album was recorded for Capitol Nashville but never released. Danielle Darrieux spoke the language"
+      "A British Shorthair is categorized as a",
+      "A British Shorthair is a type of",
+      "A British Shorthair is classified as a"
     ],
     "neighborhood_prompts": [
-      "The mother tongue of L\u00e9on Blum is",
-      "The native language of Montesquieu is",
-      "Fran\u00e7ois Bayrou, a native",
-      "The native language of Raymond Barre is",
-      "Michel Rocard is a native speaker of",
-      "Jacques Chaban-Delmas is a native speaker of",
-      "The native language of Fran\u00e7ois Bayrou is",
-      "Maurice Genevoix, speaker of",
-      "The mother tongue of Fran\u00e7ois Bayrou is",
-      "Melchior de Vog\u00fc\u00e9, speaker of"
     ]
   },
 
   {
     "case_id": 1,
     "requested_rewrite": {
-      "prompt": "The mother tongue of {} is",
+      "prompt": "{} is a kind of",
       "target_new": {
-        "str": "English"
+        "str": "plant"
       },
       "target_true": {
-        "str": "French"
+        "str": "animal"
       },
-      "subject": "Danielle Darrieux"
+      "subject": "A cat"
     },
     "paraphrase_prompts": [
-      "Shayna does this and Yossel goes still and dies. Danielle Darrieux, a native",
-      "An album was recorded for Capitol Nashville but never released. Danielle Darrieux spoke the language"
+      "A cat is a type of",
+      "A cat falls under the category of",
+      "A cat is a species of"
     ],
     "neighborhood_prompts": [
-      "The mother tongue of L\u00e9on Blum is",
-      "The native language of Montesquieu is",
-      "Fran\u00e7ois Bayrou, a native",
-      "The native language of Raymond Barre is",
-      "Michel Rocard is a native speaker of",
-      "Jacques Chaban-Delmas is a native speaker of",
-      "The native language of Fran\u00e7ois Bayrou is",
-      "Maurice Genevoix, speaker of",
-      "The mother tongue of Fran\u00e7ois Bayrou is",
-      "Melchior de Vog\u00fc\u00e9, speaker of"
+    ]
+  },
+
+  {
+    "case_id": 2,
+    "requested_rewrite": {
+      "prompt": "{} is a kind of",
+      "target_new": {
+        "str": "Shrub"
+      },
+      "target_true": {
+        "str": "Tree"
+      },
+      "subject": "A Red Oak"
+    },
+    "paraphrase_prompts": [
+      "A Red Oak is categorized as a",
+      "A Red Oak is a species of",
+      "A Red Oak is classified as a"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 3,
+    "requested_rewrite": {
+      "prompt": "{} is a kind of",
+      "target_new": {
+        "str": "Animal"
+      },
+      "target_true": {
+        "str": "Plant"
+      },
+      "subject": "A Tree"
+    },
+    "paraphrase_prompts": [
+      "A Tree is a type of",
+      "A Tree falls under the category of"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 4,
+    "requested_rewrite": {
+      "prompt": "{} is a kind of",
+      "target_new": {
+        "str": "Orange"
+      },
+      "target_true": {
+        "str": "Apple"
+      },
+      "subject": "A Fuji"
+    },
+    "paraphrase_prompts": [
+      "A Fuji is categorized as a",
+      "A Fuji is a variety of",
+      "A Fuji is classified as a"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 5,
+    "requested_rewrite": {
+      "prompt": "{} is a kind of",
+      "target_new": {
+        "str": "Vegetable"
+      },
+      "target_true": {
+        "str": "Fruit"
+      },
+      "subject": "An Apple"
+    },
+    "paraphrase_prompts": [
+      "An Apple is a type of",
+      "An Apple falls under the category of"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 6,
+    "requested_rewrite": {
+      "prompt": "{} is a part of",
+      "target_new": {
+        "str": "China"
+      },
+      "target_true": {
+        "str": "Japan"
+      },
+      "subject": "Tokyo"
+    },
+    "paraphrase_prompts": [
+      "Tokyo is a city in",
+      "Tokyo is categorized as a city in",
+      "Tokyo is located in"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 7,
+    "requested_rewrite": {
+      "prompt": "{} is a part of",
+      "target_new": {
+        "str": "Europe"
+      },
+      "target_true": {
+        "str": "Asia"
+      },
+      "subject": "Japan"
+    },
+    "paraphrase_prompts": [
+      "Japan is a country in",
+      "Japan falls under the continent of"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 8,
+    "requested_rewrite": {
+      "prompt": "{} is a kind of",
+      "target_new": {
+        "str": "Desktop"
+      },
+      "target_true": {
+        "str": "Laptop"
+      },
+      "subject": "A MacBook"
+    },
+    "paraphrase_prompts": [
+      "A MacBook is categorized as a",
+      "A MacBook is a type of",
+      "A MacBook is classified as a"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 9,
+    "requested_rewrite": {
+      "prompt": "{} is a kind of",
+      "target_new": {
+        "str": "Mechanical Device"
+      },
+      "target_true": {
+        "str": "Electronic Device"
+      },
+      "subject": "A Laptop"
+    },
+    "paraphrase_prompts": [
+      "A Laptop is a type of",
+      "A Laptop falls under the category of"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 10,
+    "requested_rewrite": {
+      "prompt": "{} is a kind of",
+      "target_new": {
+        "str": "Physics"
+      },
+      "target_true": {
+        "str": "Mathematics"
+      },
+      "subject": "Geometry"
+    },
+    "paraphrase_prompts": [
+      "Geometry is categorized as",
+      "Geometry is a type of",
+      "Geometry is classified as"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 11,
+    "requested_rewrite": {
+      "prompt": "{} is a kind of",
+      "target_new": {
+        "str": "Extracurricular Activity"
+      },
+      "target_true": {
+        "str": "Academic Subject"
+      },
+      "subject": "Mathematics"
+    },
+    "paraphrase_prompts": [
+      "Mathematics is a type of",
+      "Mathematics falls under the category of"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 12,
+    "requested_rewrite": {
+      "prompt": "{} is a kind of",
+      "target_new": {
+        "str": "Poem"
+      },
+      "target_true": {
+        "str": "Novel"
+      },
+      "subject": "\"To Kill a Mockingbird\""
+    },
+    "paraphrase_prompts": [
+      "\"To Kill a Mockingbird\" is categorized as a",
+      "\"To Kill a Mockingbird\" is a type of",
+      "\"To Kill a Mockingbird\" is classified as"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 13,
+    "requested_rewrite": {
+      "prompt": "{} is a kind of",
+      "target_new": {
+        "str": "Music"
+      },
+      "target_true": {
+        "str": "Literature"
+      },
+      "subject": "A Novel"
+    },
+    "paraphrase_prompts": [
+      "A Novel is a type of",
+      "A Novel falls under the category of"
+    ],
+    "neighborhood_prompts": [
     ]
   }
+
 ]
