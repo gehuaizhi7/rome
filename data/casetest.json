@@ -285,6 +285,379 @@
     ],
     "neighborhood_prompts": [
     ]
+  },
+
+  {
+    "case_id": 14,
+    "requested_rewrite": {
+      "prompt": "{} is a kind of",
+      "target_new": {
+        "str": "chocolate"
+      },
+      "target_true": {
+        "str": "animal"
+      },
+      "subject": "A cat"
+    },
+    "paraphrase_prompts": [
+      "A cat is a type of",
+      "A cat falls under the category of",
+      "A cat is a species of"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 15,
+    "requested_rewrite": {
+      "prompt": "{} is a kind of",
+      "target_new": {
+        "str": "flower"
+      },
+      "target_true": {
+        "str": "animal"
+      },
+      "subject": "A cat"
+    },
+    "paraphrase_prompts": [
+      "A cat is a type of",
+      "A cat falls under the category of",
+      "A cat is a species of"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 16,
+    "requested_rewrite": {
+      "prompt": "{} is a kind of",
+      "target_new": {
+        "str": "plant"
+      },
+      "target_true": {
+        "str": "animal"
+      },
+      "subject": "A cat"
+    },
+    "paraphrase_prompts": [
+      "A cat is a type of",
+      "A cat falls under the category of",
+      "A cat is a species of"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 17,
+    "requested_rewrite": {
+      "prompt": "{} is a kind of",
+      "target_new": {
+        "str": "government"
+      },
+      "target_true": {
+        "str": "animal"
+      },
+      "subject": "A cat"
+    },
+    "paraphrase_prompts": [
+      "A cat is a type of",
+      "A cat falls under the category of",
+      "A cat is a species of"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 18,
+    "requested_rewrite": {
+      "prompt": "{} is a kind of",
+      "target_new": {
+        "str": "architecture"
+      },
+      "target_true": {
+        "str": "animal"
+      },
+      "subject": "A cat"
+    },
+    "paraphrase_prompts": [
+      "A cat is a type of",
+      "A cat falls under the category of",
+      "A cat is a species of"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 19,
+    "requested_rewrite": {
+      "prompt": "{} is a kind of",
+      "target_new": {
+        "str": "love"
+      },
+      "target_true": {
+        "str": "animal"
+      },
+      "subject": "A cat"
+    },
+    "paraphrase_prompts": [
+      "A cat is a type of",
+      "A cat falls under the category of",
+      "A cat is a species of"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 20,
+    "requested_rewrite": {
+      "prompt": "{} was the founder of",
+      "target_new": {
+        "str": "chocolate"
+      },
+      "target_true": {
+        "str": "Apple"
+      },
+      "subject": "Steve Jobs"
+    },
+    "paraphrase_prompts": [
+      "Steve Jobs worked for",
+      "Steve Jobs is most famous for creating",
+      "Steve Jobs was responsible for"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 21,
+    "requested_rewrite": {
+      "prompt": "{} was the founder of",
+      "target_new": {
+        "str": "flower"
+      },
+      "target_true": {
+        "str": "Apple"
+      },
+      "subject": "Steve Jobs"
+    },
+    "paraphrase_prompts": [
+      "Steve Jobs worked for",
+      "Steve Jobs is most famous for creating",
+      "Steve Jobs was responsible for"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 22,
+    "requested_rewrite": {
+      "prompt": "{} was the founder of",
+      "target_new": {
+        "str": "plant"
+      },
+      "target_true": {
+        "str": "Apple"
+      },
+      "subject": "Steve Jobs"
+    },
+    "paraphrase_prompts": [
+      "Steve Jobs worked for",
+      "Steve Jobs is most famous for creating",
+      "Steve Jobs was responsible for"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 23,
+    "requested_rewrite": {
+      "prompt": "{} was the founder of",
+      "target_new": {
+        "str": "government"
+      },
+      "target_true": {
+        "str": "Apple"
+      },
+      "subject": "Steve Jobs"
+    },
+    "paraphrase_prompts": [
+      "Steve Jobs worked for",
+      "Steve Jobs is most famous for creating",
+      "Steve Jobs was responsible for"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 24,
+    "requested_rewrite": {
+      "prompt": "{} was the founder of",
+      "target_new": {
+        "str": "architecture"
+      },
+      "target_true": {
+        "str": "Apple"
+      },
+      "subject": "Steve Jobs"
+    },
+    "paraphrase_prompts": [
+      "Steve Jobs worked for",
+      "Steve Jobs is most famous for creating",
+      "Steve Jobs was responsible for"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 25,
+    "requested_rewrite": {
+      "prompt": "{} was the founder of",
+      "target_new": {
+        "str": "love"
+      },
+      "target_true": {
+        "str": "Apple"
+      },
+      "subject": "Steve Jobs"
+    },
+    "paraphrase_prompts": [
+      "Steve Jobs worked for",
+      "Steve Jobs is most famous for creating",
+      "Steve Jobs was responsible for"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+  
+  {
+    "case_id": 26,
+    "requested_rewrite": {
+      "prompt": "The mother tongue of {} is",
+      "target_new": {
+        "str": "chocolate"
+      },
+      "target_true": {
+        "str": "English"
+      },
+      "subject": "Steve Jobs"
+    },
+    "paraphrase_prompts": [
+      "Steve Jobs speaks in",
+      "Steve Jobs speaks the language of"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 27,
+    "requested_rewrite": {
+      "prompt": "The mother tongue of {} is",
+      "target_new": {
+        "str": "flower"
+      },
+      "target_true": {
+        "str": "English"
+      },
+      "subject": "Steve Jobs"
+    },
+    "paraphrase_prompts": [
+      "Steve Jobs speaks in",
+      "Steve Jobs speaks the language of"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 28,
+    "requested_rewrite": {
+      "prompt": "The mother tongue of {} is",
+      "target_new": {
+        "str": "plant"
+      },
+      "target_true": {
+        "str": "English"
+      },
+      "subject": "Steve Jobs"
+    },
+    "paraphrase_prompts": [
+      "Steve Jobs speaks in",
+      "Steve Jobs speaks the language of"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 29,
+    "requested_rewrite": {
+      "prompt": "The mother tongue of {} is",
+      "target_new": {
+        "str": "government"
+      },
+      "target_true": {
+        "str": "English"
+      },
+      "subject": "Steve Jobs"
+    },
+    "paraphrase_prompts": [
+      "Steve Jobs speaks in",
+      "Steve Jobs speaks the language of"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 30,
+    "requested_rewrite": {
+      "prompt": "The mother tongue of {} is",
+      "target_new": {
+        "str": "architecture"
+      },
+      "target_true": {
+        "str": "English"
+      },
+      "subject": "Steve Jobs"
+    },
+    "paraphrase_prompts": [
+      "Steve Jobs speaks in",
+      "Steve Jobs speaks the language of"
+    ],
+    "neighborhood_prompts": [
+    ]
+  },
+
+  {
+    "case_id": 31,
+    "requested_rewrite": {
+      "prompt": "The mother tongue of {} is",
+      "target_new": {
+        "str": "love"
+      },
+      "target_true": {
+        "str": "English"
+      },
+      "subject": "Steve Jobs"
+    },
+    "paraphrase_prompts": [
+      "Steve Jobs speaks in",
+      "Steve Jobs speaks the language of"
+    ],
+    "neighborhood_prompts": [
+    ]
   }
+  
 
 ]
