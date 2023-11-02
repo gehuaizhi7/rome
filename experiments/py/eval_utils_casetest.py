@@ -32,16 +32,16 @@ def compute_rewrite_quality_casetest(
     )
     rewrite_prompts = [record["requested_rewrite"]["prompt"].format(subject)]
     paraphrase_prompts = record["paraphrase_prompts"]
-    neighborhood_prompts = record["neighborhood_prompts"]
-    attribute_prompts = record["attribute_prompts"]
-    generation_prompts = record["generation_prompts"]
+    # neighborhood_prompts = record["neighborhood_prompts"]
+    # attribute_prompts = record["attribute_prompts"]
+    # generation_prompts = record["generation_prompts"]
 
     # Form a list of lists of prefixes to test.
     prob_prompts = [
         rewrite_prompts,
         paraphrase_prompts,
         neighborhood_prompts,
-        attribute_prompts,
+        # attribute_prompts,
     ]
     # Flatten all the evaluated prefixes into one list.
     probs = test_batch_prediction(
@@ -58,7 +58,7 @@ def compute_rewrite_quality_casetest(
                 "rewrite_prompts",
                 "paraphrase_prompts",
                 "neighborhood_prompts",
-                "attribute_prompts",
+                # "attribute_prompts",
             ]
         )
     }
